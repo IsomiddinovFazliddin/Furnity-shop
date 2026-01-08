@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furnity</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="font-Jost">
+    <header
+      class="bg-[url(/imgs/hero.png)] bg-center bg-no-repeat bg-cover min-h-[110vh] relative"
+    >
+      <nav>
+        <div
+          class="container max-w-300 m-auto flex items-center justify-between py-5 px-0 relative"
+        >
+          <div class="logo">
+            <img src="./imgs/logo.png" alt="" />
+          </div>
+          <ul class="flex gap-10">
+            <li>
+              <a
+                class="font-normal text-[16px] text-[#1D1F23B2] hover:text-[#1d1f23] transition-all duration-300 ease-in-out"
+                href="#"
+                >Badroom</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-normal text-[16px] text-[#1D1F23B2] hover:text-[#1d1f23] transition-all duration-300 ease-in-out"
+                href="#"
+                >Living Room</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-normal text-[16px] text-[#1D1F23B2] hover:text-[#1d1f23] transition-all duration-300 ease-in-out"
+                href="#"
+                >Dining Room</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-normal text-[16px] text-[#1D1F23B2] hover:text-[#1d1f23] transition-all duration-300 ease-in-out"
+                href="#"
+                >Office</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-normal text-[16px] text-[#1D1F23B2] hover:text-[#1d1f23] transition-all duration-300 ease-in-out"
+                href="#"
+                >Kitchen</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-normal text-[16px] text-[#1D1F23B2] hover:text-[#1d1f23] transition-all duration-300 ease-in-out"
+                href="#"
+                >Sofa</a
+              >
+            </li>
+          </ul>
+          <div class="btns flex gap-5">
+            <i
+              id="search"
+              class="text-[#1D1F23] text-[18px] cursor-pointer transition-all duration-400 ease-in-out hover:text-[#1d1f23b6] fa-solid fa-magnifying-glass"
+            ></i>
+            <i
+              id="savat"
+              class="text-[#1D1F23] text-[18px] cursor-pointer transition-all duration-400 ease-in-out hover:text-[#1d1f23b6] fa-solid fa-basket-shopping"
+            ></i>
+          </div>
+          <div
+            id="modal"
+            class="w-100 bg-white absolute top-0 right-0 p-5 shadow-xl z-10 scale-0 transition-all duration-500 ease-in-out"
+          >
+            <div
+              class="flex items-center gap-5 justify-between border-b pb-1 border-b-[#393B3F4F] mb-5"
+            >
+              <h3 class="font-semibold text-[18px] text-[#1D1F23]">
+                Your Cart
+              </h3>
+              <i id="closeBtn" class="cursor-pointer fa-solid fa-xmark"></i>
+            </div>
+            <div
+              id="modalCard"
+              class="mb-5 max-h-100 border-b border-b-[#393B3F4F] pb-5 overflow-y-auto no-scrollbar"
+            >
+              <div class="box flex items-center justify-between mb-5">
+                <div class="flex gap-3 items-center">
+                  <div class="imgs w-15 h-15">
+                    <img
+                      class="w-full h-full object-contain"
+                      src="./imgs/img.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-[18px] text-[#1D1F23]">
+                      Baltsar Chair
+                    </h4>
+                    <span class="font-normal text-[16px] text-[#8D8D8D]"
+                      >Chair</span
+                    >
+                  </div>
+                </div>
+                <div class="flex gap-5 items-center">
+                  <span class="font-semibold text-[18px] text-[#1D1F23]"
+                    >$299</span
+                  >
+                  <i class="text-red-500 cursor-pointer fa-solid fa-trash"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-10">
+              <h3 class="font-semibold text-[18px] text-[#000000]">
+                Total Payment
+              </h3>
+              <span class="font-semibold text-[18px] text-[#1D1F23]"
+                >$1243</span
+              >
+            </div>
+            <button
+              id="payNow"
+              class="font-semibold text-[18px] text-white bg-[#F6973F] rounded-[10px] w-full py-2.5 px-5 cursor-pointer"
+            >
+              Pay Now
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div class="hero">
+        <div class="container max-w-300 m-auto pt-30 overflow-visible relative">
+          <div class="conten text-center m-auto mb-25">
+            <h1
+              class="font-bold text-[48px] leading-15 text-[#1D1F23] mb-2.5 w-175 m-auto"
+            >
+              Offer products to make your interior
+              <span class="text-[#F6973F]">Minimalist.</span>
+            </h1>
+            <p class="font-normal text-[18px] text-[#1D1F23] mb-5 w-100 m-auto">
+              we have helped more than 1000+ people to give perfect comfort to
+              the interior of their home
+            </p>
+            <button
+              class="font-bold text-[18px] text-white bg-[#F6973F] rounded-[50px] py-2.5 px-7"
+            >
+              Find Produk
+            </button>
+          </div>
+          <div class="card absolute">
+            <button
+              id="leftBtn"
+              class="absolute -left-5 top-[50%] -translate-y-[50%] shadow cursor-pointer z-10 w-12 h-12 rounded-full bg-white shadow-[0px 7.03px 19.53px 0px #0000000F; ]"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              id="rightBtn"
+              class="absolute -right-5 top-[50%] -translate-y-[50%] shadow cursor-pointer z-10 w-12 h-12 rounded-full bg-white shadow-[0px 7.03px 19.53px 0px #0000000F; ]"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div id="heroCard" class="max-w-300 flex gap-8 overflow-hidden">
+              <div class="box min-w-67 bg-[#FFFFFF] rounded-[20px]">
+                <div
+                  class="imgs h-60 flex justify-center bg-[#FAFAFA] rounded-t-[20px] p-5"
+                >
+                  <img
+                    class="w-full object-contain relative"
+                    src="./imgs/img.png"
+                    alt=""
+                  />
+                </div>
+                <div class="text p-5 pb-10">
+                  <span class="font-normal text-[16.76px] text-[#8D8D8D] mb-3"
+                    >Chair</span
+                  >
+                  <h2 class="font-semibold text-[21.33px] text-[#1D1F23] mb-6">
+                    Sakarias Armchair
+                  </h2>
+                  <div class="shop flex justify-between items-center">
+                    <span class="font-semibold text-[21.33px] text-[#1D1F23]"
+                      ><sup>$</sup> 392</span
+                    >
+                    <button
+                      class="w-11 h-11 rounded-full bg-[#F79D4B] cursor-pointer flex items-center justify-center"
+                    >
+                      <i class="text-white text-[18px] fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="pt-75">
+      <section class="mb-15">
+        <div class="container max-w-300 m-auto">
+          <div class="card flex items-center justify-between gap-5">
+            <div class="text w-[45%] flex justify-between flex-wrap gap-10">
+              <div class="box w-[40%]">
+                <i class="text-[#98F3FD] mb-3 fa-solid fa-box"></i>
+                <h3
+                  class="font-semibold text-[24px] leading-7.5 text-[#1D1F23] mb-2"
+                >
+                  Fast and safe delivery
+                </h3>
+                <p
+                  class="font-normal text-[18px] leading-[130%] text-[#1D1F23B2]"
+                >
+                  please login and buy our products, safe delivery guaranteed
+                </p>
+              </div>
+              <div class="box w-[40%]">
+                <i class="text-[#C5E2AC] mb-2 fa-solid fa-spinner"></i>
+                <h3
+                  class="font-semibold text-[24px] leading-7.5 text-[#1D1F23] mb-2"
+                >
+                  Quick and easy returns
+                </h3>
+                <p
+                  class="font-normal text-[18px] leading-[130%] text-[#1D1F23B2]"
+                >
+                  Items that do not match we are ready to replace, please return
+                </p>
+              </div>
+              <div class="box w-[40%]">
+                <i class="text-[#E4A9B7] mb-3 fa-regular fa-address-book"></i>
+                <h3
+                  class="font-semibold text-[24px] leading-7.5 text-[#1D1F23] mb-2"
+                >
+                  24 hour customer service
+                </h3>
+                <p
+                  class="font-normal text-[18px] leading-[130%] text-[#1D1F23B2]"
+                >
+                  Our customer service is ready to serve you at any time, don't
+                  hesitate to contact us
+                </p>
+              </div>
+              <div class="box w-[40%]">
+                <i class="text-[#73CAB2] mb-3 fa-solid fa-bullseye"></i>
+                <h3
+                  class="font-semibold text-[24px] leading-7.5 text-[#1D1F23] mb-2"
+                >
+                  the price match is very fitting
+                </h3>
+                <p
+                  class="font-normal text-[18px] leading-[130%] text-[#1D1F23B2]"
+                >
+                  The price of the products we offer is very in accordance with
+                  the quality of the goods
+                </p>
+              </div>
+              <button
+                class="font-bold text-[18px] text-white bg-[#EF4358] rounded-[50px] py-2.5 px-7 cursor-pointer transition-all duration-500 ease-in-out hover:scale-98"
+              >
+                Start Shopping
+              </button>
+            </div>
+            <div class="imgs w-[45%] h-125 rounded-[15px] overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="./imgs/design.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container max-w-300 m-auto">
+          <div class="text-center">
+            <h2 class="font-bold text-[48px] text-[#1D1F23] w-180 m-auto mb-5">
+              Various collections of furniture to fill your interior
+            </h2>
+            <p
+              class="font-normal text-[18px] text-[#1D1F23B2] w-140 m-auto mb-10"
+            >
+              We provide a variety of goods with the best quality for you to
+              find the right one to meet your interior needs
+            </p>
+            <ul class="flex gap-5 justify-center mb-10">
+              <li class="font-normal text-[18px] text-[#1D1F23]">
+                <button
+                  class="border rounded-[50px] py-2 px-5 cursor-pointer focus:bg-[#1D1F23] focus:text-white transition-all duration-300 ease-in-out"
+                >
+                  All
+                </button>
+              </li>
+              <li class="font-normal text-[18px] text-[#1D1F23]">
+                <button
+                  class="border rounded-[50px] py-2 px-5 cursor-pointer focus:bg-[#1D1F23] focus:text-white transition-all duration-300 ease-in-out"
+                >
+                  Electronics
+                </button>
+              </li>
+              <li class="font-normal text-[18px] text-[#1D1F23]">
+                <button
+                  class="border rounded-[50px] py-2 px-5 cursor-pointer focus:bg-[#1D1F23] focus:text-white transition-all duration-300 ease-in-out"
+                >
+                  Jewelry
+                </button>
+              </li>
+              <li class="font-normal text-[18px] text-[#1D1F23]">
+                <button
+                  class="border rounded-[50px] py-2 px-5 cursor-pointer focus:bg-[#1D1F23] focus:text-white transition-all duration-300 ease-in-out"
+                >
+                  Men
+                </button>
+              </li>
+              <li class="font-normal text-[18px] text-[#1D1F23]">
+                <button
+                  class="border rounded-[50px] py-2 px-5 cursor-pointer focus:bg-[#1D1F23] focus:text-white transition-all duration-300 ease-in-out"
+                >
+                  Women
+                </button>
+              </li>
+              <li class="font-normal text-[18px] text-[#1D1F23]">
+                <button
+                  class="border rounded-[50px] py-2 px-5 cursor-pointer focus:bg-[#1D1F23] focus:text-white transition-all duration-300 ease-in-out"
+                >
+                  Sale
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div id="mainCard" class="flex justify-between gap-10 flex-wrap">
+            <div class="box min-w-67 max-w-67 bg-[#FFFFFF] rounded-[20px]">
+              <div
+                class="imgs h-60 flex justify-center bg-[#FAFAFA] rounded-t-[20px] p-5"
+              >
+                <img
+                  class="-mt-15 w-full object-contain relative"
+                  src="./imgs/img.png"
+                  alt=""
+                />
+              </div>
+              <div class="text p-5 pb-10">
+                <span class="font-normal text-[16.76px] text-[#8D8D8D] mb-3"
+                  >Chair</span
+                >
+                <h2 class="font-semibold text-[21.33px] text-[#1D1F23] mb-6">
+                  Sakarias Armchair
+                </h2>
+                <div class="shop flex justify-between items-center">
+                  <span class="font-semibold text-[21.33px] text-[#1D1F23]"
+                    ><sup>$</sup> 392</span
+                  >
+                  <button
+                    class="w-11 h-11 rounded-full bg-[#F79D4B] cursor-pointer flex items-center justify-center"
+                  >
+                    <i class="text-white text-[18px] fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-[#19191B]">
+        <div
+          class="container max-w-300 m-auto py-10 flex items-center justify-between gap-5"
+        >
+          <div>
+            <h2 class="font-bold text-[48px] text-white mb-5">
+              What are they saying ?
+            </h2>
+            <div class="flex gap-3 items-center mb-5">
+              <img src="./imgs/contactSmall.png" alt="" />
+              <div>
+                <h4 class="font-bold text-[18px] text-white mb-1.5">
+                  Jane Lowis
+                </h4>
+                <h5 class="font-normal text-[14px] text-white">Housewife</h5>
+              </div>
+            </div>
+            <p class="font-normal text-[18px] text-white w-100 mb-5">
+              the services and products offered are very good, matched what I
+              was looking for. now my room is more beautiful and aesthetic.
+            </p>
+            <div class="btns flex gap-5">
+              <button
+                class="w-10 h-10 rounded-[50px] bg-[#313136] cursor-pointer transition-all duration-400 ease-in-out hover:bg-[#EF4358]"
+              >
+                <i class="text-white fa-solid fa-chevron-left"></i>
+              </button>
+              <button
+                class="w-10 h-10 rounded-[50px] bg-[#313136] cursor-pointer transition-all duration-400 ease-in-out hover:bg-[#EF4358]"
+              >
+                <i class="text-white fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="imgs w-117 h-105 rounded-[10px] overflow-hidden">
+            <img
+              class="w-full h-full object-cover"
+              src="./imgs/contact.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section class="bg-white">
+        <div
+          class="container max-w-300 m-auto flex items-center justify-between py-10"
+        >
+          <h2 class="font-bold text-[48px] leading-[130%] text-[#1D1F23] w-180">
+            Contact us if you need anything, we are ready to serve you
+          </h2>
+          <button
+            class="font-bold text-[21px] text-white bg-[#F6973F] py-2.5 px-7 rounded-[50px] cursor-pointer transition-all duration-400 ease-in-out hover:scale-98"
+          >
+            Contact us
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-[#19191B]">
+      <div
+        class="container max-w-300 m-auto flex items-center justify-between py-5"
+      >
+        <img src="./imgs/footerLogo.png" alt="" />
+        <ul class="flex gap-5">
+          <li class="font-normal text-[18px] text-white">Support</li>
+          <li class="font-normal text-[18px] text-white">Privacy Policy</li>
+          <li class="font-normal text-[18px] text-white">
+            Terms and Conditions
+          </li>
+        </ul>
+        <h6 class="font-normal text-[18px] text-white">
+          © 2020 Furnity, All Rights Reserved
+        </h6>
+      </div>
+    </footer>
+  </body>
+  <script src="./main.js"></script>
+</html>
