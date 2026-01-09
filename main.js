@@ -11,8 +11,11 @@ const modal = document.querySelector("#modal");
 const closeBtn = document.querySelector("#closeBtn");
 const modalCard = document.querySelector("#modalCard");
 const payNow = document.querySelector("#payNow");
+const totalPrice = document.querySelector("#totalPrice");
 
 let scrollCount = 300;
+
+let priceCount = 0;
 
 const cardData = JSON.parse(localStorage.getItem("cardData")) || [];
 
@@ -112,6 +115,15 @@ const writeData = (info) => {
   });
 };
 
+const toPrice = () => {
+  priceCount = 0;
+
+  cardData.forEach((item) => {
+    priceCount += item.price;
+  });
+  totalPrice.textContent = `${priceCount.toFixed(2)}`;
+};
+
 const modalCartData = (data) => {
   modalCard.innerHTML = "";
   data.forEach((item) => {
@@ -150,6 +162,7 @@ const modalCartData = (data) => {
   localStorage.setItem("cardData", JSON.stringify(cardData));
 };
 modalCartData(cardData);
+toPrice();
 
 const addToCard = (id) => {
   const newCart = allData?.find((item) => {
@@ -165,6 +178,7 @@ const addToCard = (id) => {
 
   cardData.push(obj);
   modalCartData(cardData);
+  toPrice();
 };
 
 const del = (id) => {
@@ -174,10 +188,11 @@ const del = (id) => {
 
   cardData.push(...newCard);
   modalCartData(cardData);
+  toPrice();
 };
 
 payNow.addEventListener("click", () => {
-  if (cardData == 0) {
+  if (cardData.length == 0) {
     alert("Mahsulot tanlamagansiz");
   } else {
     modalCard.textContent = "";
@@ -187,6 +202,8 @@ payNow.addEventListener("click", () => {
   modal.classList.add("scale-0");
   modal.classList.remove("scale-100");
 
+  cardData.length = 0;
   localStorage.removeItem("cardData");
-  //   localStorage.setItem("cardData", JSON.stringify(cardData));
+  priceCount = 0;
+  totalPrice.textContent = "$0.00";
 });
