@@ -5,6 +5,7 @@ const leftBtn = document.querySelector("#leftBtn");
 const rightBtn = document.querySelector("#rightBtn");
 
 const savat = document.querySelector("#savat");
+const shopCount = document.querySelector("#shopCount");
 
 const mainCard = document.querySelector("#mainCard");
 const modal = document.querySelector("#modal");
@@ -76,7 +77,7 @@ const writeData = (info) => {
                     ><sup>$</sup> ${item.price}</span
                   >
                   <button onclick="addToCard(${item.id})" 
-                    class="w-11 h-11 rounded-full bg-[#F79D4B] cursor-pointer flex items-center justify-center"
+                    class="w-11 h-11 rounded-full bg-[#F79D4B] cursor-pointer flex items-center justify-center transition-all duration-300 ease-in-out hover:shadow-lg shadow-[#f79e4ba8]"
                   >
                     <i class="text-white text-[18px] fa-solid fa-plus"></i>
                   </button>
@@ -105,7 +106,7 @@ const writeData = (info) => {
                     ><sup>$</sup> ${item.price}</span
                   >
                   <button onclick="addToCard(${item.id})" 
-                    class="w-11 h-11 rounded-full bg-[#F79D4B] cursor-pointer flex items-center justify-center"
+                    class="w-11 h-11 rounded-full bg-[#F79D4B] cursor-pointer flex items-center justify-center transition-all duration-300 ease-in-out hover:shadow-lg shadow-[#f79e4ba8]"
                   >
                     <i class="text-white text-[18px] fa-solid fa-plus"></i>
                   </button>
@@ -155,6 +156,7 @@ const modalCartData = (data) => {
                 </div>
               </div>`;
   });
+  shopCount.textContent = cardData.length;
   if (cardData.length == 0) {
     modal.classList.add("scale-0");
     modal.classList.remove("scale-100");
@@ -206,4 +208,5 @@ payNow.addEventListener("click", () => {
   localStorage.removeItem("cardData");
   priceCount = 0;
   totalPrice.textContent = "$0.00";
+  shopCount.textContent = cardData.length;
 });

@@ -17,7 +17,7 @@
     <header
       class="bg-[url(/imgs/hero.png)] bg-center bg-no-repeat bg-cover min-h-[110vh] relative"
     >
-      <nav>
+      <nav class="fixed top-0 left-0 w-full z-50 bg-[#CCD4D6]">
         <div
           class="container max-w-300 m-auto flex items-center justify-between py-5 px-0 relative"
         >
@@ -73,10 +73,17 @@
               id="search"
               class="text-[#1D1F23] text-[18px] cursor-pointer transition-all duration-400 ease-in-out hover:text-[#1d1f23b6] fa-solid fa-magnifying-glass"
             ></i>
-            <i
-              id="savat"
-              class="text-[#1D1F23] text-[18px] cursor-pointer transition-all duration-400 ease-in-out hover:text-[#1d1f23b6] fa-solid fa-basket-shopping"
-            ></i>
+            <button class="relative">
+              <i
+                id="savat"
+                class="text-[#1D1F23] text-[18px] cursor-pointer transition-all duration-400 ease-in-out hover:text-[#1d1f23b6] fa-solid fa-basket-shopping"
+              ></i>
+              <span
+                id="shopCount"
+                class="bg-red-500 w-3.5 h-3.5 rounded-full text-[11px] text-white flex items-center justify-center absolute -top-1.5 -right-2"
+                >2</span
+              >
+            </button>
           </div>
           <div
             id="modal"
@@ -124,7 +131,9 @@
               <h3 class="font-semibold text-[18px] text-[#000000]">
                 Total Payment
               </h3>
-              <span id="totalPrice" class="font-semibold text-[18px] text-[#1D1F23]"
+              <span
+                id="totalPrice"
+                class="font-semibold text-[18px] text-[#1D1F23]"
                 >$1243</span
               >
             </div>
@@ -170,35 +179,7 @@
               <i class="fa-solid fa-chevron-right"></i>
             </button>
             <div id="heroCard" class="max-w-300 flex gap-8 overflow-hidden">
-              <div class="box min-w-67 bg-[#FFFFFF] rounded-[20px]">
-                <div
-                  class="imgs h-60 flex justify-center bg-[#FAFAFA] rounded-t-[20px] p-5"
-                >
-                  <img
-                    class="w-full object-contain relative"
-                    src="./imgs/img.png"
-                    alt=""
-                  />
-                </div>
-                <div class="text p-5 pb-10">
-                  <span class="font-normal text-[16.76px] text-[#8D8D8D] mb-3"
-                    >Chair</span
-                  >
-                  <h2 class="font-semibold text-[21.33px] text-[#1D1F23] mb-6">
-                    Sakarias Armchair
-                  </h2>
-                  <div class="shop flex justify-between items-center">
-                    <span class="font-semibold text-[21.33px] text-[#1D1F23]"
-                      ><sup>$</sup> 392</span
-                    >
-                    <button
-                      class="w-11 h-11 rounded-full bg-[#F79D4B] cursor-pointer flex items-center justify-center"
-                    >
-                      <i class="text-white text-[18px] fa-solid fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -337,35 +318,7 @@
             </ul>
           </div>
           <div id="mainCard" class="flex justify-between gap-10 flex-wrap">
-            <div class="box min-w-67 max-w-67 bg-[#FFFFFF] rounded-[20px]">
-              <div
-                class="imgs h-60 flex justify-center bg-[#FAFAFA] rounded-t-[20px] p-5"
-              >
-                <img
-                  class="-mt-15 w-full object-contain relative"
-                  src="./imgs/img.png"
-                  alt=""
-                />
-              </div>
-              <div class="text p-5 pb-10">
-                <span class="font-normal text-[16.76px] text-[#8D8D8D] mb-3"
-                  >Chair</span
-                >
-                <h2 class="font-semibold text-[21.33px] text-[#1D1F23] mb-6">
-                  Sakarias Armchair
-                </h2>
-                <div class="shop flex justify-between items-center">
-                  <span class="font-semibold text-[21.33px] text-[#1D1F23]"
-                    ><sup>$</sup> 392</span
-                  >
-                  <button
-                    class="w-11 h-11 rounded-full bg-[#F79D4B] cursor-pointer flex items-center justify-center"
-                  >
-                    <i class="text-white text-[18px] fa-solid fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
